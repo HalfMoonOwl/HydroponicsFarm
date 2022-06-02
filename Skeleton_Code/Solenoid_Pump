@@ -1,0 +1,65 @@
+//Include statements: tells the compiler to include needed libraries.
+#include <Arduino.h>
+
+//Inputs
+#define EC_Sensor A3
+
+//Outputs
+#define Solenoid 9
+
+//Thresholds
+#define EC_THRESHOLD 4
+
+
+/********************************************************************
+Global variables
+********************************************************************/
+
+
+/********************************************************************
+Setup function - this gets executed at power up, or after a reset
+********************************************************************/
+void setup() {
+//Set up serial connection at 9600 Baud
+Serial.begin(9600);
+
+//Set up pins
+pinMode(EC_Sensor, INPUT);
+
+pinMode(Solenoid, OUTPUT);
+}
+
+/********************************************************************
+Main loop function - this gets executed in an infinite loop until
+power off or reset.
+********************************************************************/
+void loop() {
+  //Serial.println(getPinVoltage(V_IN));
+  static int ECState = 0;
+  static int currentEC;   
+//  currentEC = Read(EC_Sensor);    // Need to initialize it and read in a value still. 
+  switch (ECState) {
+    case 0:   // Do NOT run motor. Waiting state
+      if(currentEC >= EC_THRESHOLD || currentEC <= 0){   // Too much fertalizer, turn water on.
+        ECState = 1;
+        Run(Solenoid);
+      }
+    break;
+
+    case 1:   // Run motor
+      if (currentEC > 0 && currentEC <4){ //Plant has water turn off
+        ECState = 0;
+        Off(Solenoid);
+      }      
+    break;
+  }
+
+}
+
+void Run(int pin){
+  digitalWrite(pin, HIGH);
+}
+
+void Off(int pin){
+  digitalWrite(pin, LOW);
+}
