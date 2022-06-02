@@ -1,0 +1,23 @@
+# = done
+* = notes
+
+build EC probe
+# DONE
+
+Complete basic resevoir system
+  # Order materials
+  Create skeleton Code 
+    Solenoid pump
+    Peristaltic pump
+    Mixer
+  Develop a design for the resevoir
+    *The main thing that we need to reference is how the pump and the mixer will fit in the bottom of a standard 5 gallon bucket.
+    * The EC probe needs to sit above the intake for the pump. Link: https://www.amazon.com/gp/product/B07L54HB83/ref=ox_sc_saved_title_8?smid=A2PQGFJXAT8J9K&psc=1
+    * The fertilizer resevoir and the distilled water resevoir need to sit above the EC probe.
+  construct the shell
+  Integrate the skeleton code together
+  build the circuit
+  Test the complete code
+  Test the machine
+  Make an animation of the complete project
+  
