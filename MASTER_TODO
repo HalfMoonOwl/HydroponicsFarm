@@ -15,6 +15,8 @@ Complete basic resevoir system
     * The EC probe needs to sit above the intake for the pump. Link: https://www.amazon.com/gp/product/B07L54HB83/ref=ox_sc_saved_title_8?smid=A2PQGFJXAT8J9K&psc=1
     * The fertilizer resevoir and the distilled water resevoir need to sit above the EC probe.
   construct the shell
+    We need to figure out what mixer we are going to use we have two options, a magnetic mixer or some modified blender
+    Magnetic mixer would be preferred but we will need to do some testing with the o-scope to make sure that the magnet will not mess with the pump.
   Integrate the skeleton code together
   build the circuit
   Test the complete code
